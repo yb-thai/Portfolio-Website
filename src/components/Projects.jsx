@@ -22,22 +22,22 @@ latency. Designed for scalability, multi-user mixing, and low-lag audio pipeline
       link: "https://github.com/yb-thai/Discord-voice-relay",
     },
     {
-      name: "Project Two",
-      role: "Another role (optional)",
+      name: "Personal Portfolio Website",
+      role: " ",
       description:
-        "Another short description for a different project. You can talk about impact or tech.",
-      tech: ["Docker", "Kubernetes", "Terraform"],
-      image: null,
-      link: "https://github.com/yb-thai/Discord-voice-relay",
+        "A modern, responsive portfolio website built using React and GitHub Pages. Designed to showcase engineering background, technical experience, and projects. The site features a clean layout, smooth navigation, and a fully optimized mobile experience.",
+      tech: ["React", "GitHub Actions", "GitHub Pages", "CSS"],
+      image: "./portfolio.png",
+      link: "https://github.com/yb-thai/Portfolio-Website",
     },
     {
-      name: "Project Two",
-      role: "Another role (optional)",
+      name: "Qt Dashboard UI",
+      role: " ",
       description:
-        "Another short description for a different project. You can talk about impact or tech.",
-      tech: ["Docker", "Kubernetes", "Terraform"],
-      image: null,
-      link: "https://github.com/yb-thai/Discord-voice-relay",
+        "A desktop dashboard interface built using Qt Creator, designed with a clean and modern user experience. Includes sidebar navigation, card components, and responsive panel layouts for showcasing data or application controls.",
+      tech: ["Qt Creator", "C++", "UI/UX Design", "QML", "Qt Framework"],
+      image: "./QT.png",
+      link: "https://github.com/yb-thai/Qt-Creator-DashboardUI",
     },
     
   ];

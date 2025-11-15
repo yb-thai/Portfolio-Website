@@ -792,3 +792,62 @@ section#about {
 }
 
 
+/* MOBILE HERO FIX */
+@media (max-width: 900px) {
+
+  .hero__top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 0.8rem;   /* reduce spacing */
+    margin-bottom: 0.5rem; 
+  }
+
+  /* Shrink the avatar */
+  .hero__photo {
+    width: 70px;
+    height: 70px;
+  }
+
+ 
+  .hero__title {
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .hero__eyebrow {
+    margin-top: 0.2rem;
+    font-size: 0.85rem;
+  }
+
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-top: 0.4rem;
+  }
+}
+
+/* SHRINK PROJECT THUMBNAIL SIZE */
+.project-card__thumb-wrapper {
+  width: 110px !important;   /* smaller thumbnail */
+}
+
+.project-card__thumb {
+  height: 85px !important;  
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+/* MOBILE FIX */
+@media (max-width: 900px) {
+  .project-card__thumb-wrapper {
+    width: 90px !important;
+  }
+
+  .project-card__thumb {
+    height: 70px !important;
+  }
+}
