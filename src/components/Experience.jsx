@@ -3,41 +3,57 @@ import React from "react";
 const Experience = () => {
   const experience = [
     {
-      period: "YEAR — YEAR",
-      title: "Your Role · Company",
-      subtitle: "Job Level (optional)",
+      period: "2022 — 2025",
+      title: "Cloud Engineer · Amazon Web Services",
+      subtitle:"",
       description:
-        "Describe what you did in this role. Mention the type of work, impact, and notable responsibilities or achievements.",
+        "Provided technical support for enterprise customers operating large-scale EKS, ECS and AWS environments. Troubleshot Kubernetes, networking, IAM, and compute issues across distributed systems and helped customers implement resilient, scalable cloud architectures. Improved CI/CD processes, reduced deployment friction, and guided teams toward AWS best practices for containerized workloads.",
       links: [
         // { label: "Case Study", href: "#" },
       ],
-      skills: ["Skill A", "Skill B", "Skill C"],
+      skills:  [
+  "AWS (EKS, ECS, EC2, VPC, IAM)",
+  "Kubernetes",
+  "Terraform",
+  "Docker","Linux", "Cloud Networking",
+  "CI/CD (GitHub Actions, GitLab, Jenkins)",
+  "Infrastructure as Code",
+],
     },
     {
-      period: "YEAR — YEAR",
-      title: "Another Role · Company",
-      subtitle: "Job Level (optional)",
+      period: "2021 — 2022",
+      title: "Software Engineer · IpserLab",
+      subtitle: "Backend / Full-Stack Engineer",
       description:
-        "Another short description for a different role. Keep it focused on outcomes and technologies.",
+        "Worked closely with the engineering team to build and modernize server-side applications, contributing to both backend and frontend development. Focused on improving API design, enhancing system performance, and supporting major migration initiatives across the platform.",
       links: [
         // { label: "Project Link", href: "#" },
       ],
-      skills: ["Skill X", "Skill Y", "Skill Z"],
+      skills: [
+    "Node.js",
+    "Java",
+    "REST API Design",
+    "Data Migration",
+    "SQL",
+    "JavaScript",
+    "Backend Development",
+    "System Integration",
+  ],
     },
   ];
 
   const education = [
     {
-      period: "YEAR — YEAR",
-      school: "Your University / School",
-      degree: "Your Degree · Major",
-      description: "Optional one-line about focus, honors, or activities.",
+      period: "2019 — 2021",
+      school: "Seattle Pacific University",
+      degree: "Bachelor's Degree · Computer Science",
+      description: "Focused on software development, data structures, algorithms, and distributed systems. Contributed to team-based engineering projects and explored cloud technologies.",
     },
     {
-      period: "YEAR — YEAR",
-      school: "Another Institution",
-      degree: "Certificate / Program",
-      description: "Optional description.",
+      period: "2016 — 2018",
+      school: "Edmonds College",
+      degree: "Associate of Science · Computer Science",
+      description: "Completed foundational coursework in programming, math, and computer science. Built early projects that sparked my interest in cloud engineering.",
     },
   ];
 
@@ -60,7 +76,7 @@ const Experience = () => {
                   )}
                 </div>
 
-                <p className="experience-item__description">
+                <p className="education-item__description">
                   {item.description}
                 </p>
 
@@ -121,7 +137,7 @@ const Experience = () => {
     target="_blank"
     rel="noreferrer"
   >
-    View full résumé →
+    View full résumé <span className="resume-link__arrow">↗</span>
   </a>
 </div>
       </div>

@@ -10,31 +10,43 @@ const App = () => {
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    const sectionIds = ["about", "experience", "projects"];
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+  const sectionIds = ["about", "experience", "projects"];
 
-    if (!sections.length) return;
+  const handleScroll = () => {
+    const viewportMiddle = window.innerHeight * 0.; // tweak 0.3–0.5 if needed
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.4, // ~40% of section visible to count as active
+    let closestId = sectionIds[0];
+    let smallestDistance = Infinity;
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const rect = el.getBoundingClientRect()
+      if (rect.bottom < 0 || rect.top > window.innerHeight) {
+        return;
       }
-    );
+      const distance = Math.abs(rect.top - viewportMiddle);
 
-    sections.forEach((el) => observer.observe(el));
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        closestId = id;
+      }
+    });
 
-    return () => observer.disconnect();
-  }, []);
+    setActiveSection(closestId);
+  };
+
+  // run once on load
+  handleScroll();
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", handleScroll);
+  };
+}, []);
 
   return (
     <div className="app">
@@ -98,14 +110,7 @@ const App = () => {
             >
               <FaLinkedin />
             </a>
-            <a
-              href="https://twitter.com/"
-              aria-label="Twitter"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaTwitter />
-            </a>
+            
           </div>
         </aside>
 
