@@ -60,6 +60,7 @@ const Experience = () => {
   return (
     <div className="section-inner">
       {/* EXPERIENCE */}
+      <h2 className="section-heading">EXPERIENCE</h2>
       <ul className="experience-list">
         {experience.map((item, i) => (
           <li key={i} className="experience-item">

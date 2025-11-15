@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="section-inner">
-      <h2 className="section-title">About</h2>
+      <h2 className="section-heading">ABOUT</h2>
       <p className="section-text">
         I'm a Cloud/DevOps Engineer with experience supporting enterprise customers at
   Amazon, helping them build, troubleshoot, and scale their EKS and AWS applications.

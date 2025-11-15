@@ -1,4 +1,7 @@
 import React from "react";
+import discordImg from "../assets/discord.jpg";
+import portfolioImg from "../assets/portfolio.png";
+import qtImg from "../assets/QT.png";
 
 const Projects = () => {
   const projects = [
@@ -18,7 +21,7 @@ latency. Designed for scalability, multi-user mixing, and low-lag audio pipeline
         "WebSocket",
         "Audio Streaming",
       ],
-      image: "./discord.jpg",
+      image: discordImg,
       link: "https://github.com/yb-thai/Discord-voice-relay",
     },
     {
@@ -27,7 +30,7 @@ latency. Designed for scalability, multi-user mixing, and low-lag audio pipeline
       description:
         "A modern, responsive portfolio website built using React and GitHub Pages. Designed to showcase engineering background, technical experience, and projects. The site features a clean layout, smooth navigation, and a fully optimized mobile experience.",
       tech: ["React", "GitHub Actions", "GitHub Pages", "CSS"],
-      image: "./portfolio.png",
+      image: portfolioImg,
       link: "https://github.com/yb-thai/Portfolio-Website",
     },
     {
@@ -36,7 +39,7 @@ latency. Designed for scalability, multi-user mixing, and low-lag audio pipeline
       description:
         "A desktop dashboard interface built using Qt Creator, designed with a clean and modern user experience. Includes sidebar navigation, card components, and responsive panel layouts for showcasing data or application controls.",
       tech: ["Qt Creator", "C++", "UI/UX Design", "QML", "Qt Framework"],
-      image: "./QT.png",
+      image: qtImg,
       link: "https://github.com/yb-thai/Qt-Creator-DashboardUI",
     },
     
@@ -44,6 +47,7 @@ latency. Designed for scalability, multi-user mixing, and low-lag audio pipeline
 
   return (
     <div className="section-inner">
+      <h2 className="section-heading">PROJECTS</h2>
       <div className="projects-grid">
         {projects.map((project, i) => {
           const Wrapper = project.link ? "a" : "div";

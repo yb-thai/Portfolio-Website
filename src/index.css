@@ -851,3 +851,59 @@ section#about {
     height: 70px !important;
   }
 }
+
+/* Desktop behavior stays the same */
+.sidebar-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* Hide the tab nav only on mobile */
+@media (max-width: 768px) {
+  .sidebar-tabs {
+    display: none;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .layout {
+    display: block;
+  }
+}
+
+/* Mobile section headers site */
+.section-heading {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .section-heading {
+    display: none;
+  }
+}
+
+/* MOBILE SIDEBAR FIX */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    display: block;
+    position: static;
+    height: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+}

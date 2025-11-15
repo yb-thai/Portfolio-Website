@@ -1,5 +1,6 @@
 // Hero.jsx
 import React from "react";
+import profileImage from "../assets/profileimage.png";
 
 const Hero = () => {
   return (
@@ -9,7 +10,7 @@ const Hero = () => {
         <h1 className="hero__title">Boonthai Yan</h1>
 
         <img
-          src="./profileimage.png" 
+          src={profileImage} 
           alt="Boonthai Yan"
           className="hero__photo"
         />
