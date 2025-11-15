@@ -9,7 +9,7 @@ const Hero = () => {
         <h1 className="hero__title">Boonthai Yan</h1>
 
         <img
-          src="public\profileimage.png" 
+          src="./profileimage.png" 
           alt="Boonthai Yan"
           className="hero__photo"
         />
