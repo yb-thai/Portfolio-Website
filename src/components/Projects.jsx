@@ -4,7 +4,7 @@ const Projects = () => {
   const projects = [
     {
       name: "Discord Voice Relay System",
-      role: "",
+      role: " ",
       description: `
 A multi-bot audio relay system built with Node.js, Discord.js, and custom
 WebSocket streaming. The system captures real-time voice from multiple
@@ -18,7 +18,7 @@ latency. Designed for scalability, multi-user mixing, and low-lag audio pipeline
         "WebSocket",
         "Audio Streaming",
       ],
-      image: null,
+      image: "./discord.jpg",
       link: "https://github.com/yb-thai/Discord-voice-relay",
     },
     {
@@ -89,7 +89,7 @@ latency. Designed for scalability, multi-user mixing, and low-lag audio pipeline
                   </div>
 
                   {/* using education style for that faded look */}
-                  <p className="education-item__description">
+                  <p className="project-card__description">
                     {project.description}
                   </p>
 

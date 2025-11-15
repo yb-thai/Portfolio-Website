@@ -76,7 +76,7 @@ const Experience = () => {
                   )}
                 </div>
 
-                <p className="education-item__description">
+                <p className="experience-item__description">
                   {item.description}
                 </p>
 

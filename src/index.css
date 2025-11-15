@@ -12,6 +12,9 @@
   --border: #2f2f2f;
 
   --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.8);
+
+  /* master knob for right-column indent on desktop */
+  --content-rail-left: 1.5rem;
 }
 
 /* GLOBAL RESET */
@@ -65,7 +68,7 @@ a {
   gap: 4rem; /* slightly smaller gap so content gets more width */
 }
 
-/* LEFT SIDE (SIDEBAR) */
+/* LEFT SIDE (SIDEBAR) – unchanged */
 
 .sidebar {
   display: flex;
@@ -82,33 +85,24 @@ a {
 /* HERO (NAME + TITLE) */
 
 .hero {
-   margin-top: 0.75rem;  
+  margin-top: 0.75rem;
 }
 
 .hero__top {
   display: flex;
   align-items: center;
-  gap: 0.5rem;        
-  margin-bottom: -1.5rem     /* space between name and photo */
+  gap: 0.5rem;         /* space between name and photo */
+  margin-bottom: -1.5rem;
 }
 
 /* Photo next to name */
 .hero__photo {
-  width: 170px;             /* avatar size */
+  width: 170px;
   height: 170px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #333;
   flex-shrink: 0;
-}
-
-.hero__eyebrow {
-  margin: 0 0 0.9rem;
-  font-size: 1rem;
-  letter-spacing: 0.09em;
-  font-weight:700;
-   margin-top: -3rem;
-    margin-bottom: 3rem;
 }
 
 .hero__title {
@@ -121,11 +115,18 @@ a {
 .hero__subtitle {
   margin: 0;
   font-size: 1rem;
-  color: #c7c7c7;
-  color: var(--text-muted);
   font-weight: 400;
+  color: #ffffff;
+  color: var(--text-muted);
 }
 
+.hero__eyebrow {
+  font-size: 1rem;
+  letter-spacing: 0.09em;
+  font-weight: 600;
+  margin-top: -3rem;
+  margin-bottom: 3rem;
+}
 
 /* SECTION TABS (ABOUT / EXPERIENCE / PROJECTS) */
 
@@ -180,15 +181,15 @@ a {
 
 /* Base state */
 .sidebar-socials a {
-  width: 42px;            /* bigger circle */
-  height: 42px;           /* bigger circle */
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
   border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 1.4rem;      /* bigger icon */
+  font-size: 1.4rem;
   color: var(--text-muted);
   background: #050505;
 
@@ -217,7 +218,7 @@ a {
   border-color: #ffffff;
   background: #101010;
   transform: translateY(-5px);
-  box-shadow: 0 0 24px rgba(255, 255, 255, 0.22); /* larger glow */
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.22);
 }
 
 /* Fade-in reveal animation */
@@ -232,7 +233,7 @@ a {
   }
 }
 
-/* RIGHT SIDE (CONTENT) */
+/* RIGHT SIDE (CONTENT) – everything from here down is the “aligned rail” */
 
 .content {
   padding-top: 4rem;
@@ -247,15 +248,18 @@ a {
   scroll-margin-top: 80px;
 }
 
-/* GENERIC SECTION WRAPPER */
-
-.section-inner {
-  /* text directly on dark background */
+/* ONE SHARED RAIL for About / Experience / Education / Projects on desktop */
+@media (min-width: 900px) {
+  .section-inner {
+    padding-left: var(--content-rail-left);
+  }
 }
+
+/* GENERIC SECTION TEXT */
 
 .section-text {
   margin: 0 0 1rem;
-  color: var(--text-main);
+  color: var(--text-muted);
   line-height: 1.7;
   font-size: 0.95rem;
 }
@@ -274,7 +278,7 @@ a {
 .resume-block {
   display: flex;
   justify-content: flex-end;
-  margin: 3rem 0 3rem 0;  /* TOP + BOTTOM spacing */
+  margin: 3rem 0;
 }
 
 .resume-link {
@@ -283,9 +287,9 @@ a {
   letter-spacing: 0.18em;
   color: var(--text-muted);
   position: relative;
-  display: inline-flex;    /* arrow on same line */
+  display: inline-flex;
   align-items: center;
-  gap: 0.4rem;             /* space between text + arrow */
+  gap: 0.4rem;
 }
 
 .resume-link::after {
@@ -319,13 +323,11 @@ a {
     opacity 160ms ease-out;
 }
 
-/* Lift arrow on hover */
 .resume-link:hover .resume-link__arrow {
-  transform: translate(3px, -3px);   /* same motion as project cards */
+  transform: translate(3px, -3px);
   color: #ffffff;
   opacity: 1;
 }
-
 
 /* EXPERIENCE SECTION */
 
@@ -337,10 +339,10 @@ a {
   gap: 2.5rem;
 }
 
-/* Each row behaves like a soft block (for hover focus) */
+/* Soft block with hover focus */
 .experience-item {
-  border-radius: 7px; /* consistent radius */
-  padding: 0.9rem 1rem;
+  border-radius: 7px;
+  padding: 1.1rem 1.6rem;
   border: none;
   transition:
     opacity 150ms ease-out,
@@ -351,16 +353,20 @@ a {
 
 .experience-item__header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 2rem;
 }
 
-.experience-item__period {
-  width: 160px;           /* fixed column width */
+/* Shared year column for both experience + education */
+.experience-item__period,
+.education-item__period {
+  width: 140px;
+  margin-left: 0;
   flex-shrink: 0;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
+  margin-top: 4px;
   color: var(--text-muted);
 }
 
@@ -385,10 +391,10 @@ a {
 }
 
 .experience-item__description {
-  margin: 0.7rem 0 0.7rem;
+  margin: 0.5rem 0 0.8rem;
   font-size: 0.9rem;
   line-height: 1.7;
-  color: var(--text-muted); /* faded like education */
+  color: var(--text-muted);
 }
 
 .experience-item__links {
@@ -422,7 +428,7 @@ a {
 .experience-item__skills {
   list-style: none;
   padding: 0;
-  margin: 0.3rem 0 0;
+  margin: 1rem 0 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
@@ -440,7 +446,7 @@ a {
   letter-spacing: 0.02em;
 }
 
-/* Dimming + focus effect (no pill highlight) */
+/* Dimming + focus effect */
 .experience-list:hover .experience-item {
   opacity: 0.5;
 }
@@ -452,10 +458,10 @@ a {
   box-shadow: none;
 }
 
-/* EDUCATION BLOCK */
+/* EDUCATION BLOCK – aligned to same rail */
 
 .education-block {
-  margin-top: 3rem;
+  margin-top: 6rem;
 }
 
 .education-title {
@@ -476,18 +482,9 @@ a {
 
 .education-item {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 2rem;
-}
-
-.education-item__period {
-  width: 160px;           /* SAME as experience */
-  margin-left: 15px;
-  flex-shrink: 0;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--text-muted);
+  padding: 1.1rem 1.6rem;  /* match experience card padding */
 }
 
 .education-item__content {
@@ -497,6 +494,7 @@ a {
 .education-item__school {
   margin: 0;
   font-size: 0.95rem;
+  font-weight: 800;
   color: #ffffff;
 }
 
@@ -510,9 +508,10 @@ a {
   margin: 0;
   font-size: 0.9rem;
   color: var(--text-muted);
+  line-height: 1.7;
 }
 
-/* PROJECTS SECTION */
+/* PROJECTS SECTION – aligned with experience rail */
 
 .projects-grid {
   display: grid;
@@ -526,13 +525,13 @@ a {
   color: inherit;
 }
 
-/* Make project card behave like experience-item */
+/* Project card behaves like experience card */
 .project-card {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
-  border-radius: 7px; /* same radius */
-  padding: 0.9rem 1rem;
+  border-radius: 7px;
+  padding: 1.1rem 1.6rem; /* same padding as experience */
   border: none;
   background: transparent;
   transition:
@@ -541,21 +540,20 @@ a {
     opacity 150ms ease-out;
 }
 
-/* Thumbnail wrapper + placeholder screenshot */
+/* Thumbnail wrapper – width tuned to align text with experience */
 .project-card__thumb-wrapper {
   flex-shrink: 0;
-  width: 190px;      /* fixed width */
+  width: 150px;      /* ~year(140) + gap(2rem) visual match */
 }
 
 .project-card__thumb {
   width: 100%;
-  height: 110px;     /* fixed height */
+  height: 110px;
   border-radius: 7px;
   background: linear-gradient(135deg, #181818, #101010);
   background-size: cover;
   background-position: center;
 }
-
 
 /* Body content on the right */
 .project-card__body {
@@ -575,14 +573,22 @@ a {
   margin: 0;
   font-size: 1rem;
   color: #ffffff;
-  display: inline-flex;   /* so arrow sits on same line */
+  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;           /* space between title and arrow */
+  gap: 0.35rem;
 }
 
 .project-card__role {
   margin: 0;
   font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Project description text – matches experience feel */
+.project-card__description {
+  margin: 0.4rem 0 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
   color: var(--text-muted);
 }
 
@@ -600,7 +606,7 @@ a {
 
 /* Animate arrow when hovering the whole card */
 .project-card__wrapper:hover .project-card__arrow {
-  transform: translate(3px, -3px);  /* up & right */
+  transform: translate(3px, -3px);
   color: #ffffff;
   opacity: 1;
 }
@@ -609,16 +615,15 @@ a {
 .project-card__tech {
   list-style: none;
   padding: 0;
-  margin-top: 0.9rem;     /* space between description and pills */
+  margin-top: 0.9rem;
   margin-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
 }
 
-
 .project-card__tech li {
-  font-size: 0.75rem;
+  font-size: 0.71rem;
   color: #e5e5e5;
   padding: 0.18rem 0.7rem;
   border-radius: 999px;
@@ -631,12 +636,11 @@ a {
   opacity: 0.5;
 }
 
-/* Hovered project: pop up, NO SHADOW */
 .projects-grid:hover .project-card:hover {
   opacity: 1;
   background: rgba(20, 20, 20, 0.4);
-  transform: translateY(-4px);  /* pop up only */
-  box-shadow: none;             /* no shadow on hover */
+  transform: translateY(-4px);
+  box-shadow: none;
 }
 
 /* NAV (if you use it somewhere) */
@@ -692,7 +696,6 @@ a {
 
 /* RESPONSIVE + STICKY SIDEBAR (Brittany layout) */
 
-/* Desktop: sticky sidebar */
 @media (min-width: 900px) {
   .layout {
     align-items: flex-start;
@@ -702,11 +705,12 @@ a {
     position: sticky;
     top: 3rem; /* same as .app top padding */
     align-self: flex-start;
-    height: calc(100vh - 6rem); /* full viewport minus vertical padding */
+    height: calc(100vh - 6rem);
   }
 }
 
 /* Mobile / tablet */
+
 @media (max-width: 900px) {
   .app {
     padding: 2.5rem 1.5rem 2.25rem;
@@ -747,8 +751,9 @@ a {
   }
 
   .content-section + .content-section {
-    margin-top: 3rem;
+    margin-top: 7rem;
   }
+
 
   .experience-item__header,
   .education-item {
@@ -770,9 +775,20 @@ a {
     width: 100%;
   }
 
-  /* give project description a bit of breathing room on mobile */
-  .project-card__body .education-item__description {
+  .project-card__description {
     margin-top: 0.6rem;
   }
 }
+
+section#about {
+  margin-bottom: 9rem !important;
+}
+
+/* Align ABOUT to the left edge of the year/period column */
+@media (min-width: 900px) {
+  #about .section-inner {
+    padding-left: calc(0rem + 50px);
+  }
+}
+
 
