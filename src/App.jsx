@@ -95,7 +95,7 @@ const App = () => {
           {/* Social icons at bottom-left */}
           <div className="sidebar-socials">
             <a
-              href="https://github.com/"
+              href="https://github.com/yb-thai?tab=repositories"
               aria-label="GitHub"
               target="_blank"
               rel="noreferrer"
@@ -103,7 +103,7 @@ const App = () => {
               <FaGithub />
             </a>
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/boonthai-yan/"
               aria-label="LinkedIn"
               target="_blank"
               rel="noreferrer"
