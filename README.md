@@ -1,0 +1,1 @@
+A fully responsive Cloud & DevOps Engineer portfolio built with React. This website highlights my professional experience, AWS/EKS background, technical projects, and personal branding. The layout features a sticky sidebar navigation (desktop), mobile-optimized hero design, project cards, smooth scrolling, and custom CSS theming. 
