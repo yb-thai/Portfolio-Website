@@ -91,7 +91,7 @@ a {
 .hero__top {
   display: flex;
   align-items: center;
-  gap: 0.5rem;         /* space between name and photo */
+  gap: 3rem;         /* space between name and photo */
   margin-bottom: -1.5rem;
 }
 
@@ -806,8 +806,8 @@ section#about {
 
   /* Shrink the avatar */
   .hero__photo {
-    width: 70px;
-    height: 70px;
+    width: 180px;
+    height: 180px;
   }
 
  
@@ -905,5 +905,29 @@ section#about {
     height: auto;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
+  }
+}
+
+/* MOBILE: Move project thumbnail under the text */
+@media (max-width: 768px) {
+  .project-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card__body {
+    order: 1;
+  }
+
+  .project-card__thumb-wrapper {
+    order: 2; /* thumbnail goes to bottom */
+    margin-top: 1rem;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .hero__top {
+    gap: 4rem;   /* bigger = avatar moves more to the right */
   }
 }
