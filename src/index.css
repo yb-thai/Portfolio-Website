@@ -937,3 +937,12 @@ section#about {
     margin-top: -2.5rem;  /* shift UP */
   }
 }
+
+@media (max-width: 900px) {
+  .hero__title {
+    font-size: 1.4rem;   /* instead of 3rem */
+  }
+  .hero__eyebrow{
+    font-size: 0.8rem;
+  }
+}
