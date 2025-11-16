@@ -928,6 +928,12 @@ section#about {
 
 @media (max-width: 900px) {
   .hero__top {
-    gap: 4rem;   /* bigger = avatar moves more to the right */
+    gap: 5rem;   /* bigger = avatar moves more to the right */
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__eyebrow {
+    margin-top: -4rem;  /* shift UP */
   }
 }
